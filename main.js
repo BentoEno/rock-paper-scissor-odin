@@ -60,9 +60,9 @@ while (humanScore <= 5 && computerScore <= 5) {
     playRound(getHumanChoice(), getComputerChoice());
 }
 
-if (humanScore = 5) {
+if (humanScore === 5) {
     console.log('You Won The Game, All Hail Human Race!');
-} else {
+} else if (computerScore === 5) {
     console.log('You Lose..., What a disappointment to Human Race!');
 }
 }
