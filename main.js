@@ -1,4 +1,5 @@
-console.log('Hello World!');
+playGame()
+console.log('Hello Player!');
 / GET computer choice: rock, paper, or scissor / 
 function getComputerChoice () {
     let choice = Math.floor(Math.random() * 3);
@@ -35,7 +36,6 @@ function getHumanChoice() {
     ELSE the point not change
 */ 
 
-
 /* IF either side gets to 5 points first, the other side lose */ 
 
 function playGame() {
@@ -63,9 +63,13 @@ while (humanScore < 5 && computerScore < 5) {
 if (humanScore > computerScore) {
     console.log('You Won The Game, All Hail Human Race!');
     console.log(`human score is ${humanScore} while computer score is ${computerScore}`);
+    alert(`human score is ${humanScore} while computer score is ${computerScore}`);
+    alert('You Won The Game, All Hail Human Race!');
 } else {
     console.log('You Lose..., What a disappointment to Human Race!');
     console.log(`computer score is ${computerScore} while human score is ${humanScore}`)
+    alert(`computer score is ${computerScore} while human score is ${humanScore}`)
+    alert('You Lose..., What a disappointment to Human Race!');
 
 }
 }
