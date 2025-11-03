@@ -21,7 +21,7 @@ function getComputerChoice () {
 
 / GET human choice: rock, paper, or scissor / 
 function getHumanChoice() {
-    let choice = prompt(`What is your choice? (type: rock, paper, or scissor)`);
+    let choice = prompt(`Lets play, What is your choice? (type: rock, paper, or scissor)`);
     if (choice.toLowerCase() === 'rock' || choice.toLowerCase() === 'paper' || choice.toLowerCase() === 'scissor') {
         choice = choice.toLowerCase();
     } else {
@@ -50,10 +50,12 @@ const playRound = (humanChoice, computerChoice) => {
     } else if (humanChoice === computerChoice) {
         console.log(`It's a Tie! Try Again`);
         alert(`It's a Tie! Try Again`);
-    } else {
+    } else if (humanChoice === 'paper' && computerChoice === 'scissor' || humanChoice === 'scissor' && computerChoice === 'rock' || humanChoice === 'rock' && computerChoice === 'paper'){
         ++computerScore;
         console.log(`You Lose!, the stupid computer beat you!`);
         alert(`You Lose!, the stupid computer beat you!`);
+    } else {
+        alert('Please enter a valid choice')
     }
 }
 while (humanScore < 5 && computerScore < 5) {
