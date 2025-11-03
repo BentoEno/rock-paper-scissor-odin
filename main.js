@@ -56,13 +56,16 @@ const playRound = (humanChoice, computerChoice) => {
         alert(`You Lose!, the stupid computer beat you!`);
     }
 }
-while (humanScore <= 5 && computerScore <= 5) {
+while (humanScore < 5 && computerScore < 5) {
     playRound(getHumanChoice(), getComputerChoice());
 }
 
-if (humanScore === 5) {
+if (humanScore > computerScore) {
     console.log('You Won The Game, All Hail Human Race!');
-} else if (computerScore === 5) {
+    console.log(`human score is ${humanScore} while computer score is ${computerScore}`);
+} else {
     console.log('You Lose..., What a disappointment to Human Race!');
+    console.log(`computer score is ${computerScore} while human score is ${humanScore}`)
+
 }
 }
