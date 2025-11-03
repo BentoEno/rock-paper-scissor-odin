@@ -1,4 +1,4 @@
-playGame()
+playGame();
 console.log('Hello Player!');
 / GET computer choice: rock, paper, or scissor / 
 function getComputerChoice () {
