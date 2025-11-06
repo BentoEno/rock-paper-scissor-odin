@@ -26,36 +26,34 @@ function playGame() {
     const rock = document.createElement('button');
     const paper = document.createElement('button');
     const scissor = document.createElement('button');
+    const humanBoard = document.createElement('div');
+    const compBoard = document.createElement('div');
+    const messageBoard = document.createElement('div');
 
     rock.textContent = 'rock';
     paper.textContent = 'paper';
     scissor.textContent = 'scissor';
+    humanBoard.textContent = `Your Score: ${humanScore}`;
+    compBoard.textContent = `Computer Score: ${computerScore}`;
 
-    body.append(rock, paper, scissor);
-    
+    body.append(rock, paper, scissor, humanBoard, compBoard, messageBoard);
+
     rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
     paper.addEventListener('click', () => playRound('rock', getComputerChoice()));
     scissor.addEventListener('click', () => playRound('rock', getComputerChoice()));
 
-
+    
     const playRound = (humanChoice, computerChoice) => {
         if (humanChoice === 'rock' && computerChoice === 'scissor' || humanChoice === 'paper' && computerChoice === 'rock' || humanChoice === 'scissor' && computerChoice === 'paper') {
             ++humanScore;
-            console.log('You Win!, you beat the stupid computer');
-            alert('You Win!, you beat the stupid computer');
+            messageBoard.textContent = 'You Win!, you beat the stupid computer';
+            humanBoard.textContent = `Your Score: ${humanScore}`;
         } else if (humanChoice === computerChoice) {
-            console.log(`It's a Tie! Try Again`);
-            alert(`It's a Tie! Try Again`);
+            messageBoard.textContent = `It's a Tie! Try Again`;
         } else if (humanChoice === 'paper' && computerChoice === 'scissor' || humanChoice === 'scissor' && computerChoice === 'rock' || humanChoice === 'rock' && computerChoice === 'paper'){
             ++computerScore;
-            console.log(`You Lose!, the stupid computer beat you!`);
-            alert(`You Lose!, the stupid computer beat you!`);
-        } else {
-            alert('Please enter a valid choice')
-        }
+            messageBoard.textContent = `You Lose!, the stupid computer beat you!`;
+            compBoard.textContent = `Computer Score: ${computerScore}`;
+        } 
     }
-
-    
-
-
 }
