@@ -20,6 +20,23 @@ function getComputerChoice () {
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    
+    // UI element creation
+    const body = document.querySelector('body');
+    const rock = document.createElement('button');
+    const paper = document.createElement('button');
+    const scissor = document.createElement('button');
+
+    rock.textContent = 'rock';
+    paper.textContent = 'paper';
+    scissor.textContent = 'scissor';
+
+    body.append(rock, paper, scissor);
+    
+    rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
+    paper.addEventListener('click', () => playRound('rock', getComputerChoice()));
+    scissor.addEventListener('click', () => playRound('rock', getComputerChoice()));
+
 
     const playRound = (humanChoice, computerChoice) => {
         if (humanChoice === 'rock' && computerChoice === 'scissor' || humanChoice === 'paper' && computerChoice === 'rock' || humanChoice === 'scissor' && computerChoice === 'paper') {
@@ -37,6 +54,8 @@ function playGame() {
             alert('Please enter a valid choice')
         }
     }
+
+    
 
 
 }
